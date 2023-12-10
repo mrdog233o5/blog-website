@@ -1,3 +1,59 @@
+// CSS
+const styleElement = document.createElement("style");
+styleElement.textContent = `
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    --roundness: 26px;
+    --padding: 10px;
+    width: 100vw;
+    display: flex;
+    padding-top: 2vh;
+    justify-content: center;
+    position: fixed;
+}
+
+nav * {
+    transition: all 0.5s ease;
+}
+
+.nav {
+    background: black;
+    overflow: hidden;
+    border-radius: calc( var(--roundness) + var(--padding) );
+    min-width: 170px;
+    min-height: 50px;
+    padding: var(--padding);
+    transition: transform 0s none;
+}
+
+.nav:hover {
+    scale: 1.03;
+}
+
+.nav .innerNav {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--roundness);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nav .content {
+    position: relative;
+    display: inline-block;
+    padding: 3px;
+    color: white;
+    white-space: nowrap;
+}
+`;
+document.head.appendChild(styleElement);
+
 window.onload = function() {
 
     // HTML
@@ -5,64 +61,6 @@ window.onload = function() {
     const oldInnerHtml = navElement.innerHTML;
     const newInnerHtml = `<div class=\"nav\"><div class=\"innerNav\"><div class=\"content\">${oldInnerHtml}</div></div></div>`;
     navElement.innerHTML = newInnerHtml;
-
-    // CSS
-    const styleElement = document.createElement("style");
-    styleElement.textContent = `
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    nav {
-        --roundness: 26px;
-        --padding: 10px;
-        width: 100vw;
-        height: 15px;
-        display: flex;
-        padding-top: 2vh;
-        justify-content: center;
-        position: fixed;
-    }
-
-    nav * {
-        transition: all 0.5s ease;
-    }
-
-    .nav {
-        background: black;
-        overflow: hidden;
-        border-radius: calc( var(--roundness) + var(--padding) );
-        min-width: 170px;
-        min-height: 50px;
-        padding: var(--padding);
-        transition: transform 0s none;
-    }
-
-    .nav:hover {
-        scale: 1.03;
-    }
-
-    .nav .innerNav {
-        width: 100%;
-        height: 100%;
-        border-radius: var(--roundness);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .nav .content {
-        position: relative;
-        display: inline-block;
-        padding: 3px;
-        color: white;
-        white-space: nowrap;
-    }
-    `;
-    document.head.appendChild(styleElement);
-
 
     // JS
 

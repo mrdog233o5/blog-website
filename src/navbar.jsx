@@ -1,5 +1,3 @@
-import './navbar.css'
-
 export default function Nav() {
     return (
         <>

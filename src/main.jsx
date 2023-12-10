@@ -1,16 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Nav from './navbar.jsx'
-import App from './App.jsx'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import Title from './title.jsx'
+import './style.css'
 
 ReactDOM.createRoot(document.getElementById('navbar')).render(
-  <React.StrictMode>
-    <Nav />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <Nav />
+    </React.StrictMode>,
+)
+
+ReactDOM.createRoot(document.getElementById('title')).render(
+    <React.StrictMode>
+        <Title />
+    </React.StrictMode>,
 )

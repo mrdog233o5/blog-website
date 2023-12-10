@@ -1,0 +1,50 @@
+#title {
+    height: 88.98px;
+    width: 50vw;
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+}
+
+nav {
+    left: 40vw;
+    width: 60vw;
+}
+
+#navbar {
+    --margin: calc( 15vw / calc( 2 * 2 ) );
+    display: flex;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar a {
+    margin: 0 var(--margin);
+}
+
+#navbar .line {
+    height: fill;
+    border: 3px solid white;
+    border-radius: 100q;
+}
+
+.nav:hover #navbar a {
+    margin: 0 calc( var(--margin) + 1vw);
+}
+
+.nav #navbar a:hover {
+    scale: 1.1;
+}
+
+@media (max-width: 550px) {
+    #title {
+        display: none;
+    }
+    nav {
+        left: 0;
+        width: 100vw;
+    }
+}
